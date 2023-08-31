@@ -14,7 +14,8 @@ class Node:
             next_node (Node, None): The next node in the linked list.
 
         Raises:
-            TypeError: If data is not an integer or if next_node is not None or a Node.
+            TypeError: If data is not an integer
+            or if next_node is not None or a Node.
         """
         self.data = data
         self.next_node = next_node
@@ -81,7 +82,7 @@ class SinglyLinkedList:
 
     def sorted_insert(self, value):
         """
-        Inserts a new Node into the correct sorted position in the list (increasing order).
+        Inserts a new Node into the correct sorted position in the list.
 
         Args:
             value (int): The data value for the new node.
@@ -110,4 +111,3 @@ class SinglyLinkedList:
             result += str(current.data) + "\n"
             current = current.next_node
         return result.strip()
-
