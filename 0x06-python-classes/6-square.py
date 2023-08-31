@@ -71,7 +71,7 @@ class Square:
            not all(isinstance(val, int) for val in value):
             raise TypeError("position must be a tuple of 2 positive integers")
         if any(val < 0 for val in value):
-            raise ValueError("position values must be >= 0")
+            raise ValueError("position must be a tuple of 2 positive integers")
         self.__position = value
 
     @property
