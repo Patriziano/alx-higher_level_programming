@@ -1,9 +1,13 @@
 #!/usr/bin/python3
+"""The Nqueen program"""
 
 import sys
 
 
 def is_safe(board, row, col):
+    """
+    Checks where is safe to place the queen
+    """
     # If there is a queen in the same column
     for i in range(row):
         if board[i][col] == 'Q':
@@ -31,11 +35,17 @@ def is_safe(board, row, col):
 
 
 def solve_nqueens(n):
+    """
+    the function that solves the position to place the solution
+    """
 
     board = [['.' for _ in range(n)] for _ in range(n)]
     solutions = []
 
     def backtrack(row):
+        """
+        The backtrack function
+        """
         nonlocal solutions
 
         if row == n:
@@ -55,6 +65,9 @@ def solve_nqueens(n):
 
 
 def main():
+    """
+    The main program
+    """
 
     if len(sys.argv) != 2:
         print("Usage: nqueens N")
