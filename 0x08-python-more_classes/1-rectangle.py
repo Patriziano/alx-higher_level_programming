@@ -9,6 +9,7 @@ class Rectangle:
 
     def __init__(self, width=0, height=0):
         """
+        Initializes the instance of the class with width and height
 
         Args:
             width (int): width of the rectangle
@@ -21,8 +22,8 @@ class Rectangle:
             ValueError: if width is less than 0
                         if height is less than 0
         """
-        self.__width = width
-        self.__height = height
+        self.width = width
+        self.height = height
 
     @property
     def width(self):
