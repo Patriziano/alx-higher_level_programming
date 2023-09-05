@@ -1,0 +1,48 @@
+"""This is a doctest for a function that print a square with # charater"""
+
+>>> print_square = __import__('4-print_square').print_square
+
+print square of 3 size
+>>> print_square(3)
+###
+###
+###
+
+Testing when no argument is passed
+>>> print_square()
+Traceback (most recent call last):
+  ...
+TypeError: print_square() missing 1 required positional argument: 'size'
+
+Passing a negative size
+>>> print_square(-6)
+Traceback (most recent call last):
+  ...
+ValueError: size must be >= 0
+
+Passing zero
+>>> print_square(0)
+
+Passing a float
+>>> print_square(16.9)
+Traceback (most recent call last):
+  ...
+TypeError: size must be an integer
+
+Passing a negative float
+>>> print_square(-6.2)
+Traceback (most recent call last):
+  ...
+TypeError: size must be an integer
+
+Passing a string
+>>> print_square("hello world")
+Traceback (most recent call last):
+  ...
+TypeError: size must be an integer
+
+Passing None as the size of the square
+>>> print_square(None)
+Traceback (most recent call last):
+    ...
+TypeError: size must be an integer
