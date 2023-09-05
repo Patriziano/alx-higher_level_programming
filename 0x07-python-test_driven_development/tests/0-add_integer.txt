@@ -1,0 +1,64 @@
+"""Importing function from the module"""
+
+>>> add_integer = __import__('0-add_integer').add_integer
+
+Test case for add_integer
+
+>>> add_integer(100, 1000)
+1100
+
+>>> add_integer("fine boy", 50)
+Traceback (most recent call last):
+	...
+TypeError: a must be an integer
+
+>>> add_integer(30.6, 10.2)
+40
+
+>>> add_integer(10.2, "interesting project")
+Traceback (most recent call last):
+	...
+TypeError: b must be an integer
+
+>>> add_integer(3.5, "I am a float")
+Traceback (most recent call last):
+	...
+TypeError: b must be an integer
+
+>>> add_integer(0)
+98
+
+>>> add_integer("I am a boy", "doctest")
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+
+>>> add_integer(0, float('nan'))
+Traceback (most recent call last):
+    ...
+ValueError: cannot convert float NaN to integer
+
+>>> add_integer(-1)
+97
+
+>>> add_integer(100, -1)
+99
+
+>>> add_integer()
+Traceback (most recent call last):
+    ...
+TypeError: add_integer() missing 1 required positional argument: 'a'
+
+>>> add_integer(float('inf'), 0)
+Traceback (most recent call last):
+    ...
+OverflowError: cannot convert float infinity to integer
+
+>>> add_integer(float('inf'), float('-inf'))
+Traceback (most recent call last):
+    ...
+OverflowError: cannot convert float infinity to integer
+
+if __name__ == "__main__":
+    import doctest
+    doctest.testmod()
