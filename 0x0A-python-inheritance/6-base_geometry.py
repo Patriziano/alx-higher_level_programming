@@ -6,8 +6,8 @@ class BaseGeometry:
     """
     A base class for geometry-related operations.
 
-    This class can be used as a foundation for defining various geometry classes
-    and methods.
+    This class can be used as a foundation for defining
+    various geometry classes and methods.
     """
 
     def area(self):
@@ -15,6 +15,7 @@ class BaseGeometry:
         Calculate the area of the geometry shape.
 
         Raises:
-        NotImplementedError: This method must be implemented in derived classes.
+        NotImplementedError: This method must be implemented inderived
+        classes.
         """
         raise NotImplementedError("area() is not implemented")
