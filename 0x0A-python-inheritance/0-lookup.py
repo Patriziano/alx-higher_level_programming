@@ -1,3 +1,7 @@
+#!/usr/bin/python3
+"""Lookup case"""
+
+
 def lookup(obj):
     """
     Returns a list of available attributes and methods of an object.
