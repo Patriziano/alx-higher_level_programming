@@ -15,7 +15,6 @@ class MyList(list):
         """
         Prints the sorted output
         """
-        sorted_list = sorted(self)
-        for item in sorted_list:
-            print(item, end=' ')
-        print()  # Print a newline at the end
+        l_sorted = self.copy()
+        l_sorted.sort()
+        print(l_sorted)
