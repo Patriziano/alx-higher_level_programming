@@ -3,6 +3,14 @@
 
 
 def append_after(filename="", search_string="", new_string=""):
+    """
+    inserts a line of text to a file, after each line containing a specific string
+
+    Args:
+        filename: the name of the file
+        search_string: the string to search for
+        New_string: the new string to be generated after appending
+    """
     if not filename:
         return
 
