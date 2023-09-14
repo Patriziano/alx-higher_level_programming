@@ -76,13 +76,15 @@ class Rectangle(BaseGeometry):
         """
         return "[Rectangle] {}/{}".format(self.__width, self.__height)
 
-class Square(Rectangle):
-    """The Square class that inherits from the Rectangle"""
-    def __init__(self, size):
-        """
-        Initializes a square class with specified size
 
-        Args:
-            size(int): size of the square
-        """
-        super().__init__(size, size)
+class Square(Rectangle):
+    """ Class that defines a Square from Rectangle class """
+    def __init__(self, size):
+        """ Method that initializes a Square """
+        self.integer_validator("size", size)
+        self.__size = size
+        super().__init__(self.__size, self.__size)
+
+    def area(self):
+        """ Method that returns a string with the area """
+        return super().area()
