@@ -103,3 +103,23 @@ class Base:
                     return []
         except FileNotFoundError:
             return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Save a list of objects to a CSV file."""
+        filename = cls.__name__ + ".csv"
+
+        with open(filename, mode='w', newline='') as file:
+            writer = csv.writer(file)
+
+            if cls.__name__ == "Rectangle":
+                fieldnames = ["id", "width", "height", "x", "y"]
+            elif cls.__name__ == "Square":
+                fieldnames = ["id", "size", "x", "y"]
+
+            writer.writerow(fieldnames)
+
+            if list_objs is not None:
+                for obj in list_objs:
+                    obj_dict = obj.to_dictionary()
+                    writer.writerow([obj_dict[field] for field in fieldnames])
