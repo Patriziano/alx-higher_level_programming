@@ -2,6 +2,7 @@
 """Base class module"""
 import json
 import os
+import csv
 
 
 class Base:
@@ -123,3 +124,20 @@ class Base:
                 for obj in list_objs:
                     obj_dict = obj.to_dictionary()
                     writer.writerow([obj_dict[field] for field in fieldnames])
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Load a list of instances from a CSV file."""
+        filename = cls.__name__ + ".csv"
+        instances = []
+
+        try:
+            with open(filename, mode='r') as file:
+                reader = csv.DictReader(file)
+                for row in reader:
+                    obj_dict = {key: int(value) for key, value in row.items()}
+                    instance = cls.create(**obj_dict)
+                    instances.append(instance)
+            return instances
+        except FileNotFoundError:
+            return []
